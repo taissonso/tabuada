@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: clamp(16px, 24px, 32px);
+}
+
+/* Principais componentes do HTML */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B3E5FC;
+}
+
+main {
+    flex-grow: 1; /* Faz o conteúdo ocupar o maximo de espaço possível */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #03A9F4;
+}
+
+footer {
+    background-color: #333333;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* --- Definindo a largura do conteúdo*/
+.container-conteudo, .resultado {
+    width: 50%;
+}
+
+/* --- Filhos do header --- */
+header h1 {
+    font-size: clamp(3em, (1em + 5vw), 6vw);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+/* --- Filhos do Main ---
+/* --- Elementos filhos do MAIN que tem a mesma configuração --- */
+.container-conteudo, .resultado {
+    box-shadow: -1px 2px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-conteudo {
+    background-color: #4ccce6;
+    height: 20vh;
+    border-bottom: 1px solid;
+}
+
+.resultado {
+    background-color: #d4d4d4;
+    padding: 15px 0 15px 0;
+}
+
+/* --- DIV container-conteudo --- */
+/* --- Elementos que tem a mesma configuração --- */
+.entrada, .botoes {
+    width: 70%;
+}
+
+.entrada {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 3%;
+}
+
+/* --- Filhos da DIV entrada --- */
+.entrada label {
+    width: 100%;
+    padding-bottom: 2px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.entrada input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+}
+
+.entrada span {
+    visibility: hidden;
+    width: 70%;
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+
+
+/* --- Filhos da div botoes--- */
+.botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    padding-top: 3px;
+}
+
+.botoes button {
+    width: 40%;
+    height: 30px;
+    letter-spacing: 0.1vw;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* --- Aplicando estilo em cada botão com as pseudo classes hover e action*/
+#calcular {
+    background-color: #1877F2;
+    box-shadow:0 5px 0 #1c56a1;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+#calcular:hover {
+    background-color: #3a8fff;
+    color: #ffffff;
+    box-shadow:0 5px 0 #125dc0;
+}
+
+#limpar {
+    background-color: #a3a3a3;
+    box-shadow:0 5px 0 #838383;
+    color: #ffffff;
+}
+
+#limpar:hover {
+    background-color: #d4d801;
+    color: #000000;
+    box-shadow:0 5px 0 #bda000;
+}
+
+#calcular:active, #limpar:active {
+    position:relative;
+    top:2px;
+    box-shadow:none;
+}
+
+/* --- Tirar o focus dos botões --- */
+.botoes button:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}
+
+/* --- media queries --- */
+@media screen and (max-width: 31.25em) {
+    .container-conteudo, .resultado {
+        width: 100%;
+    }
+
+    .entrada,
+    .botoes {
+        width: 90%;
+        height: 10vh;
+    }
+
+
+    .resultado {
+        flex-grow: 1;
+        background-color: #CAF0F8;
+    }
+}

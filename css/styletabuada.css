@@ -20,7 +20,6 @@ header {
     justify-content: center;
     align-items: center;
     background-color: #B3E5FC;
-    height: 20vh;
 }
 
 main {
@@ -40,11 +39,6 @@ footer {
     align-items: center;
 }
 
-/* --- Definindo a largura do conteúdo*/
-.container-conteudo, .resultado {
-    width: 50%;
-}
-
 /* --- Filhos do header --- */
 header h1 {
     font-size: clamp(3em, (1em + 5vw), 6vw);
@@ -61,11 +55,12 @@ header h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50%;
 }
 
 .container-conteudo {
     background-color: #4ccce6;
-    height: 20vh;
+    height: 25vh;
     border-bottom: 1px solid;
 }
 
@@ -172,7 +167,8 @@ header h1 {
 
 /* --- media queries --- */
 @media screen and (max-width: 31.25em) {
-    .container-conteudo, .resultado {
+    .container-conteudo{
+        height: 30vh;
         width: 100%;
     }
 
@@ -183,6 +179,7 @@ header h1 {
 
 
     .resultado {
+        width: 100%;
         flex-grow: 1;
         background-color: #CAF0F8;
     }
